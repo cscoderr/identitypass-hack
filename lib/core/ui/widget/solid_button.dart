@@ -11,6 +11,7 @@ class SolidButton extends StatelessWidget {
     this.textSize = 18.0,
     this.elevation = 0.0,
     this.border = const BorderSide(color: CsColors.primary),
+    this.isLoading = false,
   }) : super(key: key);
 
   final String? text;
@@ -20,6 +21,7 @@ class SolidButton extends StatelessWidget {
   final double textSize;
   final double elevation;
   final BorderSide border;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +43,17 @@ class SolidButton extends StatelessWidget {
         padding: const EdgeInsets.all(
           15,
         ),
-        child: Text(
-          text!,
-          style: CsTextStyle.caption.copyWith(
-            color: textColor,
-            fontSize: textSize,
-          ),
-        ),
+        child: isLoading
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : Text(
+                text!,
+                style: CsTextStyle.caption.copyWith(
+                  color: textColor,
+                  fontSize: textSize,
+                ),
+              ),
       ),
     );
   }

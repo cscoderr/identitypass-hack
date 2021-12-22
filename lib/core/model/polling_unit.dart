@@ -8,14 +8,14 @@ part 'polling_unit.g.dart';
   fieldRename: FieldRename.snake,
 )
 class PollingUnit {
-  String? gender;
-  String? vin;
-  String? firstName;
-  String? lastName;
-  String? pollingUnit;
-  String? dateOfBirth;
+  final String? gender;
+  final String? vin;
+  final String? firstName;
+  final String? lastName;
+  final String? pollingUnit;
+  final String? dateOfBirth;
 
-  PollingUnit({
+  const PollingUnit({
     this.gender,
     this.vin,
     this.firstName,
